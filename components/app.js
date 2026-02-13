@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Home, FileText, PieChart, Compass, Calendar, User, Timer, Bookmark, Zap, Activity, Grid, MousePointer2 } from 'lucide-react';
-
+import { Home, FileText, PieChart, Compass, Calendar, User, Bookmark } from 'lucide-react';
+// IMPORTANTE: Todos deben terminar en .js
+import NotesView from './components/NotesView.js';
+import LinksView from './components/LinksView.js';
+import AnalysisView from './components/AnalysisView.js';
+import DiscoveryView from './components/DiscoveryView.js';
+import ProfileView from './components/ProfileView.js';
 // Helper para persistencia
 function usePersistentState(key, initialValue) {
   const [state, setState] = useState(() => {
