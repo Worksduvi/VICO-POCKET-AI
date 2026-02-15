@@ -6,12 +6,10 @@
     <title>VICO POCKET</title>
     <meta name="theme-color" content="#0b0f1a">
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/png" href="./icon.png">
-    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-<script type="text/babel" data-type="module" src="./main.js"></script>
     <script type="importmap">
     {
       "imports": {
@@ -24,19 +22,24 @@
     }
     </script>
     <style>
+      /* Estilos base */
       body { background-color: #0b0f1a; color: #e2e8f0; margin: 0; overflow: hidden; }
-      #root:empty { display: flex; justify-content: center; align-items: center; height: 100vh; }
-      #root:empty::after { content: 'Cargando VICO AI...'; color: #3b82f6; font-weight: bold; animation: pulse 1s infinite; }
-      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+      
+      /* HEMOS ELIMINADO AQUÍ LAS REGLAS:
+         #root:empty
+         #root:empty::after
+         @keyframes pulse
+      */
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./main.js"></script>
+    
+    <script type="text/babel" data-type="module" src="./main.js"></script>
+
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // Registramos sw.js que es el que tienes en la raíz
           navigator.serviceWorker.register('./sw.js')
             .then(() => console.log('VICO SW Activo'))
             .catch(err => console.log('Error SW:', err));
@@ -44,4 +47,4 @@
       }
     </script>
   </body>
-</html>
+</html >
