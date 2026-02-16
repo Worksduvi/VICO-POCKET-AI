@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Home, FileText, PieChart, Compass, Calendar, User, Bookmark, Timer } from 'lucide-react';
 
-// RUTAS CORREGIDAS: Ahora busca en la raíz, no en /components/
+// RUTAS CORREGIDAS PARA TU REPOSITORIO ACTUAL
 import NotesView from './NotesView.js';
 import LinksView from './LinksView.js';
 import AnalysisView from './AnalysisView.js';
@@ -99,4 +99,4 @@ const App = () => {
     </div>
   );
 };
-export defaul t App;
+export default App;
