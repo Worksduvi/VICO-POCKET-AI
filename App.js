@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Home, FileText, PieChart, Compass, Calendar, User, Bookmark, Timer } from 'lucide-react';
-import NotesView from './components/NotesView.js';
-import LinksView from './components/LinksView.js';
-import AnalysisView from './components/AnalysisView.js';
-import DiscoveryView from './components/DiscoveryView.js';
-import ProfileView from './components/ProfileView.js';
-import CalendarView from './components/CalendarView.js';
-import ChatWidget from './components/ChatWidget.js';
-import PomodoroWidget from './components/PomodoroWidget.js';
+
+// RUTAS CORREGIDAS: Ahora busca en la raíz, no en /components/
+import NotesView from './NotesView.js';
+import LinksView from './LinksView.js';
+import AnalysisView from './AnalysisView.js';
+import DiscoveryView from './DiscoveryView.js';
+import ProfileView from './ProfileView.js';
+import CalendarView from './CalendarView.js';
+import ChatWidget from './ChatWidget.js';
+import PomodoroWidget from './PomodoroWidget.js';
 
 function usePersistentState(key, initialValue) {
   const [state, setState] = useState(() => {
@@ -97,4 +99,4 @@ const App = () => {
     </div>
   );
 };
-export default App; 
+export defaul t App;
