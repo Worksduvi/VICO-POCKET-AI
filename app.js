@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Home, FileText, PieChart, Compass, Calendar, User, Bookmark, Timer } from 'lucide-react';
 
-// RUTAS CORREGIDAS PARA TU REPOSITORIO ACTUAL
 import NotesView from './NotesView.js';
 import LinksView from './LinksView.js';
 import AnalysisView from './AnalysisView.js';
@@ -58,18 +57,18 @@ const App = () => {
     switch(activeView) {
       case 'dashboard':
         return (
-          <div className="p-4 space-y-6 pb-24 overflow-y-auto h-full">
+          <div className="p-4 space-y-6 pb-24 overflow-y-auto h-full text-white">
             <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/40 to-slate-900 border border-blue-500/20 relative">
-               <h1 className="text-3xl font-bold text-white mb-2">VICO AI</h1>
+               <h1 className="text-3xl font-bold mb-2">VICO AI</h1>
                <p className="text-slate-400 italic text-sm">"Sistema Inteligente Activo"</p>
                <button onClick={() => setShowPomodoro(true)} className="absolute top-4 right-4 text-slate-400"><Timer/></button>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              <div className="glass-panel p-4 rounded-xl flex flex-col items-center bg-slate-800/50" onClick={() => setActiveView('notes')}>
-                <FileText size={20} className="text-blue-400 mb-1"/><span className="text-[10px] font-bold text-white">Notas</span>
+              <div className="p-4 rounded-xl flex flex-col items-center bg-slate-800/50 border border-slate-700" onClick={() => setActiveView('notes')}>
+                <FileText size={20} className="text-blue-400 mb-1"/><span className="text-[10px] font-bold">Notas</span>
               </div>
-              <div className="glass-panel p-4 rounded-xl flex flex-col items-center bg-slate-800/50" onClick={() => setActiveView('calendar')}>
-                <Calendar size={20} className="text-yellow-400 mb-1"/><span className="text-[10px] font-bold text-white">Agenda</span>
+              <div className="p-4 rounded-xl flex flex-col items-center bg-slate-800/50 border border-slate-700" onClick={() => setActiveView('calendar')}>
+                <Calendar size={20} className="text-yellow-400 mb-1"/><span className="text-[10px] font-bold">Agenda</span>
               </div>
             </div>
           </div>
@@ -79,7 +78,7 @@ const App = () => {
       case 'calendar': return <CalendarView events={events} setEvents={setEvents} isCyber={true} />;
       case 'analysis': return <AnalysisView isCyber={true} settings={settings} />;
       case 'discovery': return <DiscoveryView isCyber={true} settings={settings} />;
-      case 'profile': return <ProfileView settings={settings} setSettings={setSettings} dataVault={{export: ()=>{}, import: ()=>{}}} />;
+      case 'profile': return <ProfileView settings={settings} setSettings={setSettings} dataVault={{export: ()=>{}, import: ()=>{}}} customButtons={[]} setCustomButtons={()=>{}} />;
       default: return null;
     }
   };
